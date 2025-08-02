@@ -1,5 +1,5 @@
 import Bull from "bull";
-import bull from "bull";
+
 
 export const redisConfig = {
     redis:{
