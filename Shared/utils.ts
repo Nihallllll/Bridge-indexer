@@ -1,5 +1,5 @@
 import { Contract, Wallet, JsonRpcProvider } from "ethers";
-
+import { abi } from "../abi";
 
 export const transferToken = async (
   isBNB: boolean,
@@ -11,8 +11,8 @@ export const transferToken = async (
     const privateKey =  process.env.privatekey;
     const contractAddress = !isBNB ? process.env.BNB_Add : process.env.AVA_Add;
     const provider  = new JsonRpcProvider(rpcProvider);
-    const wallet = new Wallet(privateKey,provider);
-    const mintInitiater = new Contract(contractAddress,wallet,ABI);
+    const wallet = new Wallet(process.env.privateKey,provider);
+    const mintInitiater = new Contract(contractAddress,wallet,abi);
 
       const testToken = !isBNB
     ? process.env.TESTTOKEN_BNB!

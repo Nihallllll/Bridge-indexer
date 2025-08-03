@@ -50,7 +50,7 @@ export const listenToBridgeEvents = async (
       sender,
       network,
     });
-  }
+     }
 
   await PrismaClient.networkStatus.update({
     where: { network },
